@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:musicplayer_ui/box_decoration.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+class SecondPage extends StatelessWidget {
+  const SecondPage({Key? key,required this.Text1,required
+  this.Text2}) : super(key: key);
+  final String Text1;
+  final String Text2;
 
   @override
   Widget build(BuildContext context) {
@@ -15,8 +18,11 @@ class HomePage extends StatelessWidget {
             children: [
               Row(
                 children: [
-                  BoxDec(
-                      child: Icon(Icons.arrow_back), height: 60.0, width: 60.0),
+                  GestureDetector(
+                    onTap: (){Navigator.pop(context);},
+                    child: BoxDec(
+                        child: Icon(Icons.arrow_back), height: 60.0, width: 60.0),
+                  ),
                   SizedBox(width: 75),
                   Text("P L A Y L I S T", style: TextStyle(fontSize: 15)),
                   SizedBox(width: 70),
@@ -39,12 +45,12 @@ class HomePage extends StatelessWidget {
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text("Jubin Natiyal",
+                              Text(Text1,
                                   style: TextStyle(
                                       fontSize: 15,
                                       fontWeight: FontWeight.bold)),
                               Text(
-                                "Tum Hi Aana",
+                                Text2,
                                 style: TextStyle(
                                     fontWeight: FontWeight.bold, fontSize: 20),
                               ),
